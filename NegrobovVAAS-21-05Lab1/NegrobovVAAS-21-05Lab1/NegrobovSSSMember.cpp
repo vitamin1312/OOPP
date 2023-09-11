@@ -8,9 +8,10 @@
 std::istream& operator >> (std::istream& in, NegrobovSSSMember& member) {
 
 	std::cout << "Input members name: ";
-	std::cin >> member.name;
+	std::cin.ignore();
+	std::getline(std::cin, member.name);
 	std::cout << "Input members group: ";
-	std::cin >> member.group;
+	std::getline(std::cin, member.group);
 	std::cout << "Input members rate (min: 0; max: 100): ";
 	member.rate = get_num_value(min_rate, max_rate);
 
@@ -29,9 +30,10 @@ std::ostream& operator << (std::ostream& out, const NegrobovSSSMember& member) {
 }
 
 std::ifstream& operator >> (std::ifstream& fin, NegrobovSSSMember& member) {
-	fin >> member.name
-	   >> member.group
-	   >> member.rate;
+	fin.ignore();
+	std::getline(fin, member.name);
+	std::getline(fin, member.group);
+	fin >> member.rate;
 
 	return fin;
 }
