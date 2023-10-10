@@ -38,10 +38,6 @@ bool NegrobovSSS::to_file(std::string file_name) {
 	for (auto &member : members) {
 		ar << member.get();
 	}
-
-	ar.Close();
-	f.Close();
-
 	return true;
 }
 
@@ -61,8 +57,6 @@ bool NegrobovSSS::from_file(std::string file_name) {
 		ar >> p_member;
 		members.push_back(std::shared_ptr<NegrobovSSSMember>(p_member));
 	}
-	ar.Close();
-	f.Close();
 	return true;
 }
 
