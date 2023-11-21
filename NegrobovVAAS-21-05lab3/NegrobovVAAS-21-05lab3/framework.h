@@ -29,7 +29,11 @@
 
 
 
-
+#include <memory>
+#include <vector>
+#include <algorithm>
+#include <tuple>
+#include <functional>
 
 
 

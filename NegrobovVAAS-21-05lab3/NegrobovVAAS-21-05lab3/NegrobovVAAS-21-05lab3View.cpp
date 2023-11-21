@@ -47,14 +47,21 @@ BOOL CNegrobovVAAS2105lab3View::PreCreateWindow(CREATESTRUCT& cs)
 
 // CNegrobovVAAS2105lab3View drawing
 
-void CNegrobovVAAS2105lab3View::OnDraw(CDC* /*pDC*/)
+void CNegrobovVAAS2105lab3View::OnDraw(CDC* pDC)
 {
 	CNegrobovVAAS2105lab3Doc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	if (!pDoc)
 		return;
 
-	// TODO: add draw code for native data here
+	CPen pen(PS_SOLID, 3, RGB(10, 7, 10));
+	CPen* pOldPen = pDC->SelectObject(&pen);
+
+	CSize total_size = pDoc->sss.draw_members(pDC);
+
+	SetScrollSizes(MM_TEXT, total_size);
+
+	pDC->SelectObject(pOldPen);
 }
 
 void CNegrobovVAAS2105lab3View::OnInitialUpdate()

@@ -23,6 +23,7 @@
 IMPLEMENT_DYNCREATE(CNegrobovVAAS2105lab3Doc, CDocument)
 
 BEGIN_MESSAGE_MAP(CNegrobovVAAS2105lab3Doc, CDocument)
+	ON_COMMAND(ID_EDIT_SSSDIALOG, &CNegrobovVAAS2105lab3Doc::OnEditSssdialog)
 END_MESSAGE_MAP()
 
 
@@ -46,6 +47,7 @@ BOOL CNegrobovVAAS2105lab3Doc::OnNewDocument()
 	// TODO: add reinitialization code here
 	// (SDI documents will reuse this document)
 
+	sss.clear();
 	return TRUE;
 }
 
@@ -58,11 +60,11 @@ void CNegrobovVAAS2105lab3Doc::Serialize(CArchive& ar)
 {
 	if (ar.IsStoring())
 	{
-		// TODO: add storing code here
+		sss.to_file(ar);
 	}
 	else
 	{
-		// TODO: add loading code here
+		sss.from_file(ar);
 	}
 }
 
@@ -136,3 +138,9 @@ void CNegrobovVAAS2105lab3Doc::Dump(CDumpContext& dc) const
 
 
 // CNegrobovVAAS2105lab3Doc commands
+
+
+void CNegrobovVAAS2105lab3Doc::OnEditSssdialog()
+{
+	// TODO: Add your command handler code here
+}
