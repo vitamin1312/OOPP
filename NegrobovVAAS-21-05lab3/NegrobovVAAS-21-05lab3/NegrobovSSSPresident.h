@@ -21,4 +21,6 @@ public:
 	void Serialize(CArchive& ar) override;
 
 	unsigned int get_experience();
+
+	void set_experience(unsigned int experience);
 };

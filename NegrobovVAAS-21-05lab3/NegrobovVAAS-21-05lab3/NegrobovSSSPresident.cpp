@@ -33,6 +33,10 @@ void NegrobovSSSPresident::Serialize(CArchive& ar) {
 }
 
 
-unsigned int  NegrobovSSSPresident::get_experience() {
+unsigned int NegrobovSSSPresident::get_experience() {
     return experience;
+}
+
+void NegrobovSSSPresident::set_experience(unsigned int experience) {
+    this->experience = experience;
 }

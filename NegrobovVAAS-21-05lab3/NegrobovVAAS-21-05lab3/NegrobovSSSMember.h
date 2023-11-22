@@ -28,4 +28,10 @@ public:
 	CString get_group();
 
 	unsigned int get_rate();
+
+	void set_name(CString name);
+
+	void set_group(CString group);
+
+	void set_rate(unsigned int rate);
 };

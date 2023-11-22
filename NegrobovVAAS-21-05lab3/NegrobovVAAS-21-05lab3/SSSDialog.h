@@ -34,9 +34,12 @@ public:
 	CEdit mem_group;
 	CEdit mem_rate;
 	CEdit mem_exp;
-	int current_index;
+	int current_index = -1;
 	afx_msg void OnLbnSelchangeMemlist();
+	void show_data(int index);
 	afx_msg void OnBnClickedDeletemem();
 	void EnableWindows();
 	afx_msg void OnBnClickedAddmem();
+	afx_msg void OnBnClickedChangemem();
+	CStatic exp_txt;
 };

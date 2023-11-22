@@ -1,6 +1,7 @@
 #pragma once
 #include "afxdialogex.h"
 #include "NegrobovVAAS-21-05lab3Doc.h"
+#include "SSSDialog.h"
 
 
 // SSSMemberDialog dialog
@@ -8,10 +9,10 @@
 class SSSMemberDialog : public CDialogEx
 {
 	DECLARE_DYNAMIC(SSSMemberDialog)
-	CNegrobovVAAS2105lab3Doc* m_pDoc;
+
 
 public:
-	SSSMemberDialog(CNegrobovVAAS2105lab3Doc* m_pDoc, BOOL add_new, CWnd* pParent = nullptr);   // standard constructor
+	SSSMemberDialog(CNegrobovVAAS2105lab3Doc* m_pDoc, SSSDialog* m_pDiag, BOOL add_new, CWnd* pParent = nullptr);   // standard constructor
 	virtual ~SSSMemberDialog();
 
 // Dialog Data
@@ -24,6 +25,10 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
+	CNegrobovVAAS2105lab3Doc* m_pDoc;
+	SSSDialog* m_pDiag;
+	BOOL OnInitDialog();
+
 	BOOL is_president;
 	BOOL add_new;
 	CEdit mem_name;
@@ -33,4 +38,7 @@ public:
 	afx_msg void OnBnClickedOk();
 	void add_member();
 	void add_president();
+	void change_member(NegrobovSSSMember* mem, BOOL is_p);
+	afx_msg void OnBnHotItemChangeIspres(NMHDR* pNMHDR, LRESULT* pResult);
+	CButton CB_is_president;
 };

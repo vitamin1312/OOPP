@@ -54,3 +54,15 @@ CString NegrobovSSSMember::get_group() {
 unsigned int NegrobovSSSMember::get_rate() {
 	return rate;
 }
+
+void NegrobovSSSMember::set_name(CString name) {
+	this->name = name;
+}
+
+void NegrobovSSSMember::set_group(CString group) {
+	this->group = group;
+}
+
+void NegrobovSSSMember::set_rate(unsigned int rate) {
+	this->rate = rate;
+}
