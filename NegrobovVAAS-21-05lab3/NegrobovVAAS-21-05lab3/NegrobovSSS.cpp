@@ -95,3 +95,20 @@ std::vector<int> NegrobovSSS::get_x_coordinates(CDC* pDC, int x_padding, std::ve
 void NegrobovSSS::clear() {
 	members.clear();
 }
+
+
+void NegrobovSSS::delete_member(int idx) {
+	members.erase(members.begin() + idx, members.begin() + idx + 1);
+}
+
+
+void NegrobovSSS::to_CLBMembers(CListBox& CLBMembers) {
+	for (auto& p_mem : members) {
+
+		CLBMembers.AddString(p_mem.get()->get_name());
+	}
+}
+
+size_t NegrobovSSS::get_size() {
+	return members.size();
+}

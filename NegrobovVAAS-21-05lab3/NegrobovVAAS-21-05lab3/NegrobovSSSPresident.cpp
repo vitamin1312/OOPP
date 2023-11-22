@@ -31,3 +31,8 @@ void NegrobovSSSPresident::Serialize(CArchive& ar) {
     }
 
 }
+
+
+unsigned int  NegrobovSSSPresident::get_experience() {
+    return experience;
+}

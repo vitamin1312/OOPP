@@ -49,4 +49,5 @@ protected:
 #endif // SHARED_HANDLERS
 public:
 	afx_msg void OnEditSssdialog();
+	afx_msg void OnBnClickedAddmem();
 };

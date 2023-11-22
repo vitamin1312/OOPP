@@ -41,3 +41,16 @@ void NegrobovSSSMember::Serialize(CArchive& ar) {
 
 	}
 }
+
+
+CString NegrobovSSSMember::get_name() {
+	return name;
+}
+
+CString NegrobovSSSMember::get_group() {
+	return group;
+}
+
+unsigned int NegrobovSSSMember::get_rate() {
+	return rate;
+}

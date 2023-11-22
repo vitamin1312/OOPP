@@ -19,4 +19,6 @@ public:
 	void draw(CDC* pDC, std::vector<int> x_coordinates, int& top, int y_height);
 
 	void Serialize(CArchive& ar) override;
+
+	unsigned int get_experience();
 };

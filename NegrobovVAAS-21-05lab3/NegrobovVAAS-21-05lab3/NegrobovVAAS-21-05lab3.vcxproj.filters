@@ -54,6 +54,9 @@
     <ClInclude Include="SSSDialog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SSSMemberDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NegrobovVAAS-21-05lab3.cpp">
@@ -84,6 +87,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SSSDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SSSMemberDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

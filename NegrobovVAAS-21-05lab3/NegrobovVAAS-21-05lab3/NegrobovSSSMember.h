@@ -22,4 +22,10 @@ public:
 	virtual void draw(CDC* pDC, std::vector<int> x_coordinates, int& top, int y_height);
 
 	virtual void Serialize(CArchive& ar);
+
+	CString get_name();
+
+	CString get_group();
+
+	unsigned int get_rate();
 };

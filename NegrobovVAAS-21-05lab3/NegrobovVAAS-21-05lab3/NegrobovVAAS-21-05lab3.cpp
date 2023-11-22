@@ -158,6 +158,3 @@ void CNegrobovVAAS2105lab3App::OnAppAbout()
 }
 
 // CNegrobovVAAS2105lab3App message handlers
-
-
-

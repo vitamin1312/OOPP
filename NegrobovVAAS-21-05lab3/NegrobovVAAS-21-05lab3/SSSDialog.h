@@ -1,18 +1,19 @@
 #pragma once
 #include "afxdialogex.h"
+#include "NegrobovVAAS-21-05lab3Doc.h"
 
 
-class CMFCApplicationDoc;
+class CNegrobovVAAS2105lab3Doc;
 
 // SSSDialog dialog
 
 class SSSDialog : public CDialogEx
 {
 	DECLARE_DYNAMIC(SSSDialog)
-	CMFCApplicationDoc* m_pDoc;
+	CNegrobovVAAS2105lab3Doc* m_pDoc;
 
 public:
-	SSSDialog(CWnd* pParent = nullptr);   // standard constructor
+	SSSDialog(CNegrobovVAAS2105lab3Doc* m_pDoc, CWnd* pParent = nullptr);   // standard constructor
 	virtual ~SSSDialog();
 
 // Dialog Data
@@ -24,4 +25,18 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
+public:
+	CListBox CLBMembers;
+
+	virtual BOOL OnInitDialog();
+
+	CEdit mem_name;
+	CEdit mem_group;
+	CEdit mem_rate;
+	CEdit mem_exp;
+	int current_index;
+	afx_msg void OnLbnSelchangeMemlist();
+	afx_msg void OnBnClickedDeletemem();
+	void EnableWindows();
+	afx_msg void OnBnClickedAddmem();
 };

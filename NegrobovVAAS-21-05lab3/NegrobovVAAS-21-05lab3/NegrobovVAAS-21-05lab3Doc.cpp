@@ -11,6 +11,7 @@
 #endif
 
 #include "NegrobovVAAS-21-05lab3Doc.h"
+#include "SSSDialog.h"
 
 #include <propkey.h>
 
@@ -142,5 +143,7 @@ void CNegrobovVAAS2105lab3Doc::Dump(CDumpContext& dc) const
 
 void CNegrobovVAAS2105lab3Doc::OnEditSssdialog()
 {
-	// TODO: Add your command handler code here
+	SSSDialog dlg(this);
+	dlg.DoModal();
+	UpdateAllViews(NULL);
 }
