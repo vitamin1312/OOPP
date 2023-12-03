@@ -121,6 +121,7 @@ void SSSDialog::OnBnClickedDeletemem() {
 				EnableWindows();
 			}
 		}
+		m_pDoc->SetModifiedFlag();
 	}
 }
 
@@ -129,6 +130,7 @@ void SSSDialog::OnBnClickedAddmem() {
 	SSSMemberDialog dlg(m_pDoc, this, TRUE);
 	dlg.DoModal();
 	m_pDoc->UpdateAllViews(NULL);
+	m_pDoc->SetModifiedFlag();
 }
 
 
@@ -138,5 +140,6 @@ void SSSDialog::OnBnClickedChangemem()
 		SSSMemberDialog dlg(m_pDoc, this, FALSE);
 		dlg.DoModal();
 		m_pDoc->UpdateAllViews(NULL);
+		m_pDoc->SetModifiedFlag();
 	}
 }

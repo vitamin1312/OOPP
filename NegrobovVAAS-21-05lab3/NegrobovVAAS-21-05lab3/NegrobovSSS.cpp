@@ -103,10 +103,9 @@ void NegrobovSSS::delete_member(int idx) {
 
 
 void NegrobovSSS::to_CLBMembers(CListBox& CLBMembers) {
-	for (auto& p_mem : members) {
+	std::for_each(members.begin(), members.end(), [&](auto p_mem) {
 
-		CLBMembers.AddString(p_mem.get()->get_name());
-	}
+		CLBMembers.AddString(p_mem.get()->get_name());});
 }
 
 size_t NegrobovSSS::get_size() {

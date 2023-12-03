@@ -56,10 +56,14 @@ unsigned int NegrobovSSSMember::get_rate() {
 }
 
 void NegrobovSSSMember::set_name(CString name) {
+	if (name.GetLength() == 0)
+		name = _T("null");
 	this->name = name;
 }
 
 void NegrobovSSSMember::set_group(CString group) {
+	if (group.GetLength() == 0)
+		group = _T("null");
 	this->group = group;
 }
 

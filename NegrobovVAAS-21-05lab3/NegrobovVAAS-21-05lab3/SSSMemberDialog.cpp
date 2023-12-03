@@ -153,19 +153,18 @@ void SSSMemberDialog::OnBnClickedOk()
 		NegrobovSSSMember* mem = m_pDoc->sss.members[idx].get();
 		change_member(mem, CB_is_president.GetCheck());
 	}
-	while (m_pDiag->CLBMembers.DeleteString(0));
+	if (m_pDiag->CLBMembers.GetCount())
+		while (m_pDiag->CLBMembers.DeleteString(0));
 	m_pDoc->sss.to_CLBMembers(m_pDiag->CLBMembers);
 	m_pDiag->CLBMembers.SetCurSel(idx);
 	m_pDiag->OnLbnSelchangeMemlist();
 }
-
 
 void SSSMemberDialog::OnBnHotItemChangeIspres(NMHDR* pNMHDR, LRESULT* pResult)
 {
 	// This feature requires Internet Explorer 6 or greater.
 	// The symbol _WIN32_IE must be >= 0x0600.
 	LPNMBCHOTITEM pHotItem = reinterpret_cast<LPNMBCHOTITEM>(pNMHDR);
-	mem_exp.EnableWindow(is_president);
+	mem_exp.EnableWindow(CB_is_president.GetCheck());
 	*pResult = 0;
 }
-

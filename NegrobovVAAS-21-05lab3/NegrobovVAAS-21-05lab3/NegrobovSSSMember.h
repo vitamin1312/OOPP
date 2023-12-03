@@ -6,8 +6,8 @@
 class NegrobovSSSMember : public CObject
 {
 private:
-	CString name = _T("");
-	CString group = _T("");
+	CString name = _T("null");
+	CString group = _T("null");
 	unsigned int rate = 0;
 
 public:

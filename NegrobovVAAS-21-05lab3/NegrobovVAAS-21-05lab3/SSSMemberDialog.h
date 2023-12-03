@@ -39,6 +39,6 @@ public:
 	void add_member();
 	void add_president();
 	void change_member(NegrobovSSSMember* mem, BOOL is_p);
-	afx_msg void OnBnHotItemChangeIspres(NMHDR* pNMHDR, LRESULT* pResult);
 	CButton CB_is_president;
+	afx_msg void OnBnHotItemChangeIspres(NMHDR* pNMHDR, LRESULT* pResult);
 };
