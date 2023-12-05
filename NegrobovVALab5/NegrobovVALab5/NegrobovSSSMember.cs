@@ -1,5 +1,6 @@
 ﻿using System;
-
+using System.IO;
+using System.Runtime.Serialization;
 
 namespace NegrobovVALab5
 {
@@ -7,22 +8,24 @@ namespace NegrobovVALab5
     public class NegrobovSSSMember
     {
 
-        string name;
-        string group;
-        uint rate;
+        public string name;
+        public string group;
+        public uint rate;
 
-        uint min_rate = 0;
-        uint max_rate = 100;
+        protected uint min_rate = 0;
+        protected uint max_rate = 100;
+
+
+        public NegrobovSSSMember() { }
 
 
         public virtual void output()
         {
             Console.WriteLine("-----------------------------------------");
-            Console.WriteLine("Name: ", name);
-            Console.WriteLine("Group: ", group);
-            Console.WriteLine("Rate: ", rate);
+            Console.WriteLine($"Name: {name}");
+            Console.WriteLine($"Group: {group}");
+            Console.WriteLine($"Name: {rate}");
             Console.WriteLine("-----------------------------------------");
-            Console.WriteLine();
         }
 
 
@@ -34,8 +37,8 @@ namespace NegrobovVALab5
             Console.Write("Input group: ");
             group = Console.ReadLine();
 
-            Console.Write("Input group: ");
-            group = Convert.ToUInt32(Console.ReadLine());
+            Console.Write("Input rate: ");
+            rate = Input.get_uint_value(min_rate, max_rate);
         }
     }
 }

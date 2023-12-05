@@ -1,28 +1,33 @@
 ﻿using System;
+using System.IO;
+using System.Runtime.Serialization;
+
 
 namespace NegrobovVALab5
 {
     [Serializable]
     public class NegrobovSSSPresident : NegrobovSSSMember
     {
-        uint experience;
+        public uint experience;
 
-        public override output()
+        public NegrobovSSSPresident()
+        : base ()
+        { }
+
+        public override void output()
         {
             Console.WriteLine("-----------------------------------------");
             Console.WriteLine("President");
             base.output();
-            Console.WriteLine("experience: ", experience);
+            Console.WriteLine($"Experience: {experience}");
             Console.WriteLine("-----------------------------------------");
-
         }
 
-        public override input()
+        public override void input()
         {
             base.input();
             Console.Write("Input experience: ");
-            experience = Convert.ToUInt32(Console.ReadLine("Input "));
+            experience = Input.get_uint_value(min_rate, max_rate);
         }
     }
-
 }
